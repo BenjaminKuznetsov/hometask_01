@@ -2,7 +2,7 @@ import express, { Request, Response } from "express"
 import { videosRouter } from "./features/video-router"
 import { VideoResolutions, VideoType } from "./types"
 import { HttpStatusCodes } from "../lib/httpStatusCodes"
-import { URLs } from "../lib/urls"
+import { URLS } from "../lib/urls"
 export const app = express()
 
 export const db: { videos: VideoType[] } = {
@@ -41,14 +41,14 @@ export const db: { videos: VideoType[] } = {
 }
 
 app.use(express.json())
-app.use(URLs.VIDEOS, videosRouter)
+app.use(URLS.VIDEOS, videosRouter)
 
-app.get(URLs.HOME, (req: Request, res: Response) => {
+app.get(URLS.HOME, (req: Request, res: Response) => {
   let helloPhrase = "Hometask 01, V1"
   res.send(helloPhrase)
 })
 
-app.delete(URLs.CLEAR_DB, (req: Request, res: Response) => {
+app.delete(URLS.CLEAR_DB, (req: Request, res: Response) => {
   db.videos = []
   res.sendStatus(HttpStatusCodes.NoContent)
 })

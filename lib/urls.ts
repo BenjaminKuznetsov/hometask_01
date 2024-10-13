@@ -1,5 +1,5 @@
-export enum URLs {
+export enum URLS {
   HOME = "/",
   VIDEOS = "/videos",
-  CLEAR_DB = "/videos/:id",
+  CLEAR_DB = "testing/all-data",
 }

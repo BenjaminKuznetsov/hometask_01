@@ -1,4 +1,4 @@
-import { app } from "./settings"
+import { app } from "./app"
 
 const port = 3000
 

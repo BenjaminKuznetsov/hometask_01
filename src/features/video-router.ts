@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express"
-import { db } from "../settings"
+import { db } from "../app"
 import { HttpStatusCodes } from "../../lib/httpStatusCodes"
 import {
   ApiErrorType,

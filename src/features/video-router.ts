@@ -95,11 +95,13 @@ const validate_AvailableResolutions = (value: unknown, errorsMessages: FieldErro
     })
   }
 
-  if (value.find((value) => !Object.values(VideoResolutions).includes(value))) {
-    errorsMessages.push({
-      message: "Allowed values are [ P144, P240, P360, P480, P720, P1080, P1440, P2160 ]",
-      field: "availableResolutions",
-    })
+  for (const element of Object.values(VideoResolutions)) {
+    if (!value.includes(element)) {
+      errorsMessages.push({
+        message: "Allowed values are [ P144, P240, P360, P480, P720, P1080, P1440, P2160 ]",
+        field: "availableResolutions",
+      })
+    }
   }
 }
 
